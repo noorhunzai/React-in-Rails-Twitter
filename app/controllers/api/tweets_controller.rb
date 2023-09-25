@@ -1,5 +1,5 @@
 module Api
-  class TweetsController < ApplicationController
+  class TweetsController < ApplicationController    
     def index
       @tweets = Tweet.all.order(created_at: :desc)
       render 'api/tweets/index'
@@ -50,6 +50,33 @@ module Api
 
     def tweet_params
       params.require(:tweet).permit(:message, :image)
+    end
+  end
+end
+
+userscontroller
+module Api
+  class UsersController < ApplicationController
+    def create
+      @user = User.new(user_params)
+
+      if @user.save
+        render 'api/users/create'
+      else
+        render json: {
+          success: false
+        }
+      end
+    end
+    
+    def current_user
+      render json: { username: current_user.username }
+    end
+
+    private
+
+    def user_params
+      params.require(:user).permit(:email, :password, :username)
     end
   end
 end

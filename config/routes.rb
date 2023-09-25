@@ -1,23 +1,33 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'
+  # Root route (Home page)
+  root 'home_pages#home'
 
+  # Feed route
+  get '/feed', to: 'feed#feed'
+
+  # API routes
   namespace :api do
-    # USERS
-    post '/users'                  => 'users#create'
+    # Users
+    post '/sign-up', to: 'users#create'
 
-    # SESSIONS
-    post '/sessions'               => 'sessions#create'
-    get  '/authenticated'          => 'sessions#authenticated'
-    delete '/sessions'             => 'sessions#destroy'
+    # Sessions
+    post '/log-in', to: 'sessions#create'
+    delete '/log-out', to: 'sessions#destroy'
+    get '/authenticated', to: 'sessions#authenticated'
 
-    # TWEETS
-    post '/tweets'                 => 'tweets#create'
-    get  '/tweets'                 => 'tweets#index'
-    delete '/tweets/:id'           => 'tweets#destroy'
-    get  '/users/:username/tweets' => 'tweets#index_by_user'
-    get  '/tweets/search/:keyword' => 'tweets#search'
+    # Tweets
+    resources :tweets, only: [:index, :create, :destroy]
+    get '/users/:username/tweets', to: 'tweets#index_by_user'
+    get '/tweets/search/:keyword', to: 'tweets#search'
   end
 
-  get '*path' => 'static_pages#home'
-  # if you are using active storage to upload and store images, comment the above line
+  # If you are using Active Storage for images, you can add routes here.
+  # For example:
+  # get '/images/:id', to: 'images#show'
+  # post '/images', to: 'images#create'
+
+  # Catch-all route to redirect undefined routes to the root path.
+  # get '*path', to: 'home_pages#home'
+
+  # Define other routes as needed for your application.
 end

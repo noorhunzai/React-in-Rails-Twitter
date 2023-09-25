@@ -1,0 +1,188 @@
+.feed-container {
+  min-height: calc(100vh - 51px);
+  background-image: url(~images/bg_2.jpg);
+  background-position: left 40px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: #C0DEED;
+
+  .navbar {
+    background-color: #fff;
+
+    .navbar-brand {
+      i.fab.fa-twitter {
+        color: #00aced;
+        font-size: 24px;
+        padding-left: 12rem;
+      }
+    }
+
+    .navbar-collapse{
+      padding-right: 12rem;
+    }
+
+    .form-control.me-2 {
+      height: 50px;
+      padding-top: 7px;
+    }    
+  }
+
+  .main {
+    margin-top: 50px;
+    padding-top: 10px;
+    min-width: 1000px;
+
+    .profile-trends {
+      width: 290px;
+
+      .card-body {
+        h5.card-title {
+          font-weight: 700;
+          font-size: 18px;
+          color: inherit!important;
+        }
+
+        p.card-text {
+          color: #66757f;
+          font-size: 12px;
+          line-height: 16px;
+          text-decoration: none;
+        }
+
+        .d-flex {
+          div {
+            margin-top: 5px;
+
+            p:first-child {
+              color: #8c9ca9;
+              font-size: 10px;
+              letter-spacing: .02em;
+              text-transform: uppercase;
+              text-decoration: none;
+            }
+
+            p:first-child:hover {
+              color: #0084B4;
+            }
+          }
+        }
+      }
+
+      .trends {
+        background: #fff;
+        padding: 10px 0;
+        border-radius: 5px;
+        margin-top: 10px;
+
+        h6 {
+          margin-bottom: 10px;
+          color: #66757f;
+          font-size: 18px;
+          font-weight: 300;
+        }
+
+        ul.list-group.list-group-flush {
+          list-style: none;
+          padding-left: 0;
+        }
+      }
+    }
+
+    .feed-box {
+      width: 600px;
+
+      .input-group.mb-3 {
+        textarea.form-control {
+          padding-top: 10px;
+          background: #C0DEED;
+          border: 1px solid #BFE0EC;
+          border-radius: 5px 5px 0 0 ;
+        }
+      }
+
+      .tweet {
+        background: #fff;
+        border: 1px solid #BFE0EC;
+        border-top: none;
+        padding: 10px 10px;
+
+        strong {
+          font-size: 14px;
+          font-weight: bold;
+          color: #292f33;
+        }
+
+        small {
+          color: #b1bbc3;
+          text-decoration: none;
+          font-size: 13px;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    .tweet-emojis {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px; /* Add some margin to separate from tweet content */
+    }
+
+    .tweet-emojis a {
+      text-decoration: none; /* Remove underline */
+    }
+
+    .tweet {
+      /* Your existing styles for tweet */
+      position: relative; /* Add this line to make the tweet position relative */
+    }
+
+    .tweet-dropdown {
+      position: absolute;
+      top: 0; /* Adjust this value to position the dropdown menu vertically */
+      right: 0; /* Adjust this value to position the dropdown menu horizontally */
+      text-decoration: none;
+    }
+
+    .tweet-dropdown .dots-icon {
+      text-decoration: none !important;
+    }
+    
+    .dots-icon {
+      font-size: 1.5rem; /* Adjust the size of the dots icon */
+      color: #100e0e; /* Adjust the color of the dots icon */
+      
+    }
+    
+    .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: #999;
+      border-radius: 50%;
+      margin-right: 2px;
+    }
+    
+    .dropdown-menu {
+      min-width: 130px;
+      padding: 0;      
+    }     
+    
+
+    .d-flex.flex-row-reverse {
+      #image-preview {
+        max-width: 100px; // you can adjust this
+        height: auto;
+        margin: 10px;
+      }
+    }
+  }
+}
